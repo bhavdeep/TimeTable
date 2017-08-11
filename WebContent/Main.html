@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript" src = "Main.js"> </script>
+</head>
+<body>
+	<button type="button" onclick="saveCookie()">save</button>
+	<button type="button" onclick="getCookie()">get</button>
+
+<script type="text/javascript">  
+	function saveCookie() {
+		document.cookie = "studentName=Amitabh; max-age=" + (100*60*60*24);
+	}
+	function getCookie() {
+		var cvalue = document.cookie;
+		alert("cookie: " + cvalue);
+	}
+</script>
+</body>
+</html>

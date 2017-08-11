@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src = "../../lib/jquery-3.1.1.js"> </script>
+	<script type="text/javascript" src = "./Entity.js"> </script>
+	<script type="text/javascript" src = "../util/UIComponent.js"> </script>
+	<script type="text/javascript" src = "../util/cookiesHandler.js"> </script>
+	<script type="text/javascript" src = "./ClassSubject.js"> </script>
+	<script type="text/javascript" src = "./TeacherSubject.js"> </script>
+	<meta charset="ISO-8859-1">
+	<title>Teachers</title>
+	
+	<style>
+	  .buttonWidth{width:150px;}
+	  .left{float:left; width:40%; padding:2%;}
+	  .leftTeacherSubject{float:left; width:25%; padding:2%;}
+	  .rightTeacherSubject{float:left; width:25%; padding:2%;}
+	</style>
+</head>
+<body onload="defaultSettings()" onunload="saveDataAndCookies()">
+	<button class="buttonWidth" type="button" onclick="fillTeachers()">Teachers</button>
+	<button class="buttonWidth" type="button" onclick="fillClasses()">Classes</button>
+	<button class="buttonWidth" type="button" onclick="fillSubjects()">Subjects</button>
+	<button class="buttonWidth" type="button" onclick="fillClassSubject()">Class Subjects</button>
+	<button class="buttonWidth" type="button" onclick="fillTeacherSubject()">Teacher Subjects</button>
+	<button class="buttonWidth" type="button" style="display: none;" onclick="uploadCookies()">upload cookies</button>
+	<button class="buttonWidth" type="button" style="display: none;" onclick="saveDataAndCookies()">save cookies</button>
+	<br>
+		<div id="entity" style="position: absolute; width:100%; top:10%">
+			<div class ="left">
+				<b><label style="width:100%" id="listTitle"> Teachers List </label></b><br>
+				<select name="teacher" id="entityList" size=6 style="width:50%" onchange="displaySelected()">
+				</select>
+			</div>
+			<div class ="left">
+				<input type="text" name="name" id="entityTextBox"><br>
+				<button class="buttonWidth" type="button" onclick="addEntity()">Add</button><br> 
+				<button class="buttonWidth" type="button" onclick="updateEntity()">Update</button><br> 
+				<button class="buttonWidth" type="button" onclick="deleteEntity();">Delete</button> 
+			</div>
+		</div>
+		<div id="teacherSubject" style="position: absolute; width:100%; float:left; top:10%">
+			<div class ="leftTeacherSubject">
+						<label style="width:25%"><b> Teachers List </b></label><br>
+						<select name="tsTeacherList" id="tsTeacherList" size=8 style="width:90%" onchange="fillTeacherSubject()">
+						</select>
+			</div>
+			<div class ="rightTeacherSubject" >
+						<button class="buttonWidth" type="button" onclick="assignSubject()">Assign</button>
+						<button class="buttonWidth" type="button" onclick="removeSubject()">UnAssign</button><br>
+						<select name="tsAllSubjects" id="tsAllSubjects" size=1 style="width:100%" onchange="fillTeacherSubject()"></select><br>
+						<select name="tsTeacherSubject" id="tsTeacherSubject" size=6 style="width:100%" onchange="fillTeacherSubject()"></select>
+			</div>
+			<div class ="rightTeacherSubject" >
+						<button class="buttonWidth" type="button" onclick="assignClass()">Assign</button>
+						<button class="buttonWidth" type="button" onclick="removeClass()">UnAssign</button><br>
+						<select name="tsAllClassess" id="tsAllClassess" size=1 style="width:100%" onchange="fillTeacherSubject()"> </select><br>
+						<select name="tsTeacherSubjectClasses" id="tsTeacherSubjectClasses" size=6 style="width:100%" onchange="fillTeacherSubject()"> </select>
+			</div>
+		</div>
+		<div id="classSubject" style="position: absolute; width:100%; float:left; top:10%">
+			<div class ="leftTeacherSubject">
+						<label style="width:25%"><b> Class List </b></label><br>
+						<select name="csClassList" id="csClassList" size=8 style="width:90%" onchange="fillClassSubject()">
+						</select>
+			</div>
+			<div class ="rightTeacherSubject" >
+						<button class="buttonWidth" type="button" onclick="assignSubject()">Assign</button>
+						<button class="buttonWidth" type="button" onclick="removeSubject()">UnAssign</button><br>
+						<select name="csAllSubjects" id="csAllSubjects" size=1 style="width:100%" ></select><br>
+						<select name="tsTeacherSubject" id="tsTeacherSubject" size=6 style="width:100%" ></select>
+			</div>
+		</div>
+</body>
+</html>
