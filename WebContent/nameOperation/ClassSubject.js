@@ -26,7 +26,26 @@ function fillCsClassList() {
 }
 
 function fillClassSubjectList() {
+	var classIndex = classFound();  // pass it class name obtained from listbox 
 	var listBox = document.getElementById(CS_ALL_SUBJECTS);
 	fillSelectListFromArray(listBox, subjects);
 }
 
+function assignClassSubjectList() {
+	var className = document.getElementById("csClassList").value;
+	classFound(className);
+	classSubjects.push()
+	var listBox = document.getElementById(CS_ALL_SUBJECTS);
+	fillSelectListFromArray(listBox, subjects);
+}
+
+function  classFound( className) {
+	for ( i = 0; i < classSubjects.length; i++) {
+		if (Array.isArray(classSubjects[i])) {
+			if (classSubjects[i][0] == "className") {
+				return i;
+			}
+		}	
+	}
+	return -1;
+}

@@ -29,6 +29,7 @@ const TEACHER_SUBJECT_PAGE = 5;
 var teachers = [];
 var classes = [];
 var subjects = [];
+var classSubjects = [];
 var entityArray = [];
 var currentPage = -1
 
@@ -138,10 +139,23 @@ function fillData(entities) {
 
 function addEntity() {
 	var tb = document.getElementById("entityTextBox");
-	var option = document.createElement("option");
-	option.text = tb.value;
 	var listBox = document.getElementById("entityList");
-	listBox.add(option);
+	if (checkIfNotExistInListBox(listBox, tb.value)) {
+		var option = document.createElement("option");
+		option.text = tb.value;
+		listBox.add(option);
+	} else {
+		alert (tb.value + " already exists!");
+	}
+}
+
+function checkIfNotExistInListBox(lb, value) {
+	for (var i = 0; i < lb.length; i++){
+		if (lb.options[i].text == value) {
+			return false;
+		}
+	}
+	return true;
 }
 
 function deleteEntity (){
@@ -149,6 +163,9 @@ function deleteEntity (){
 	 for (var i=0; i < listBox.length; i++ ) {
 		 if (listBox.options[i].selected) {
 			 listBox.remove(i);
+			 if (i < listBox.length) {
+				 listBox.selectedIndex = i;
+			 }
 			 break;
 		 }
 	 }
