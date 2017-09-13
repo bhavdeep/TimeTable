@@ -19,11 +19,11 @@
 	</style>
 </head>
 <body onload="defaultSettings()" onunload="saveDataAndCookies()">
-	<button class="buttonWidth" type="button" onclick="fillTeachers()">Teachers</button>
-	<button class="buttonWidth" type="button" onclick="fillClasses()">Classes</button>
-	<button class="buttonWidth" type="button" onclick="fillSubjects()">Subjects</button>
-	<button class="buttonWidth" type="button" onclick="fillClassSubject()">Class Subjects</button>
-	<button class="buttonWidth" type="button" onclick="fillTeacherSubject()">Teacher Subjects</button>
+	<button class="buttonWidth" type="button" accessKey="T" onclick="fillTeachers()"><u>T</u>eachers</button>
+	<button class="buttonWidth" type="button" accessKey="C" onclick="fillClasses()"><u>C</u>lasses</button>
+	<button class="buttonWidth" type="button" accessKey="S" onclick="fillSubjects()"><u>S</u>ubjects</button>
+	<button class="buttonWidth" type="button" accessKey="j" onclick="fillClassSubject()">Class Sub<u>j</u>ects</button>
+	<button class="buttonWidth" type="button" accessKey="b" onclick="fillTeacherSubject()">Teacher Su<u>b</u>jects</button>
 	<button class="buttonWidth" type="button" style="display: none;" onclick="uploadCookies()">upload cookies</button>
 	<button class="buttonWidth" type="button" style="display: none;" onclick="saveDataAndCookies()">save cookies</button>
 	<br>
@@ -47,14 +47,14 @@
 						</select>
 			</div>
 			<div class ="rightTeacherSubject" >
-						<button class="buttonWidth" type="button" onclick="assignSubject()">Assign</button>
-						<button class="buttonWidth" type="button" onclick="removeSubject()">UnAssign</button><br>
+						<button class="buttonWidth" type="button" accessKey="A" onclick="assignSubject()"><u>A</u>ssign</button>
+						<button class="buttonWidth" type="button" accessKey="U" onclick="removeSubject()"><u>U</u>nAssign</button><br>
 						<select name="tsAllSubjects" id="tsAllSubjects" size=1 style="width:100%" onchange="fillTeacherSubject()"></select><br>
 						<select name="tsTeacherSubject" id="tsTeacherSubject" size=6 style="width:100%" onchange="fillTeacherSubject()"></select>
 			</div>
 			<div class ="rightTeacherSubject" >
-						<button class="buttonWidth" type="button" onclick="assignClass()">Assign</button>
-						<button class="buttonWidth" type="button" onclick="removeClass()">UnAssign</button><br>
+						<button class="buttonWidth" type="button" accessKey="A" onclick="assignClass()"><u>A</u>ssign</button>
+						<button class="buttonWidth" type="button" accessKey="U" onclick="removeClass()"><u>U</u>nAssign</button><br>
 						<select name="tsAllClassess" id="tsAllClassess" size=1 style="width:100%" onchange="fillTeacherSubject()"> </select><br>
 						<select name="tsTeacherSubjectClasses" id="tsTeacherSubjectClasses" size=6 style="width:100%" onchange="fillTeacherSubject()"> </select>
 			</div>
@@ -66,8 +66,8 @@
 						</select>
 			</div>
 			<div class ="rightTeacherSubject" >
-						<button class="buttonWidth" type="button" onclick="assignSubject()">Assign</button>
-						<button class="buttonWidth" type="button" onclick="removeSubject()">UnAssign</button><br>
+						<button class="buttonWidth" type="button" accessKey="A" onclick="assignSubject()"><u>A</u>ssign</button>
+						<button class="buttonWidth" type="button" accessKey="g" onclick="removeSubject()"><u>U</u>nAssign</button><br>
 						<select name="csAllSubjects" id="csAllSubjects" size=1 style="width:100%" ></select><br>
 						<select name="tsTeacherSubject" id="tsTeacherSubject" size=6 style="width:100%" ></select>
 			</div>
